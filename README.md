@@ -1,7 +1,4 @@
 # Arch-Hyprland-Dotfiles-Laptop
-Below are some screenshots of my hyprland setup looks
-
-Here is your file structure rendered using the raw markdown code block style:
 
 ```
 └── .config/
@@ -32,7 +29,7 @@ Here is your file structure rendered using the raw markdown code block style:
 ```
 
 
-
+Below are some screenshots of my hyprland setup looks
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6718bec8-9568-4e97-ac9f-9f64127e4476" />
 

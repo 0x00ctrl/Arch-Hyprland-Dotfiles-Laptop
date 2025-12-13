@@ -1,6 +1,9 @@
 # Arch-Hyprland-Dotfiles-Laptop
 Below are some screenshots of my hyprland setup looks
 
+Here is your file structure rendered using the raw markdown code block style:
+
+```
 └── .config/
     ├── hypr/
     │   ├── hyprlock.conf
@@ -12,9 +15,9 @@ Below are some screenshots of my hyprland setup looks
     │   └── themes/
     │       └── autumn.toml
     ├── rmpc/
-    │   ├── config.ron/
+    │   ├── config.ron
     │   └── themes/
-    │       └── t.ron/
+    │       └── t.ron
     ├── waybar/
     │   ├── mocha.css
     │   ├── style.css
@@ -26,6 +29,7 @@ Below are some screenshots of my hyprland setup looks
     │   └── style-8.rasi
     └── fish/
         └── config.fish
+```
 
 
 

@@ -1,31 +1,32 @@
 # Arch-Hyprland-Dotfiles-Laptop
 Below are some screenshots of my hyprland setup looks
 
-.
-├── alacritty/
-|   ├── alacritty.toml
-|   └── themes
-|        └── autumn.toml
-├── fish/
-│   └── config.fish
-├── hypr/
-│   ├── hypridle.conf
-│   ├── hyprland.conf
-│   ├── hyprlock.conf
-│   └── hyprpaper.conf
-├── rmpc/
-│   └── config.ron
-│   ├── themes/
-│       └── t.ron
-├── rofi/
-│   ├── launcher.sh
-│   ├── powermenu.sh
-│   ├── style-4.rasi
-│   └── style-8.rasi
-└── waybar/
-    ├── config
-    ├── mocha.css
-    └── style.css
+└── .config/
+    ├── hypr/
+    │   ├── hyprlock.conf
+    │   ├── hyprland.conf
+    │   ├── hyprpaper.conf
+    │   └── hypridle.conf
+    ├── alacritty/
+    │   ├── alacritty.toml
+    │   └── themes/
+    │       └── autumn.toml
+    ├── rmpc/
+    │   ├── config.ron/
+    │   └── themes/
+    │       └── t.ron/
+    ├── waybar/
+    │   ├── mocha.css
+    │   ├── style.css
+    │   └── config
+    ├── rofi/
+    │   ├── launcher.sh
+    │   ├── powermenu.sh
+    │   ├── style-4.rasi
+    │   └── style-8.rasi
+    └── fish/
+        └── config.fish
+
 
 
 

@@ -1,5 +1,33 @@
 # Arch-Hyprland-Dotfiles-Laptop
-These are my Arch Hyprland config files which I am using on my Laptop.
+Below are some screenshots of my hyprland setup looks
+
+.
+├── alacritty/
+|   ├── alacritty.toml
+|   └── themes
+|        └── autumn.toml
+├── fish/
+│   └── config.fish
+├── hypr/
+│   ├── hypridle.conf
+│   ├── hyprland.conf
+│   ├── hyprlock.conf
+│   └── hyprpaper.conf
+├── rmpc/
+│   └── config.ron
+│   ├── themes/
+│       └── t.ron
+├── rofi/
+│   ├── launcher.sh
+│   ├── powermenu.sh
+│   ├── style-4.rasi
+│   └── style-8.rasi
+└── waybar/
+    ├── config
+    ├── mocha.css
+    └── style.css
+
+
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6718bec8-9568-4e97-ac9f-9f64127e4476" />
 

@@ -7,4 +7,5 @@ These are my Arch Hyprland config files which I am using on my Laptop.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b95a14db-a0c3-43dc-afe4-7500e75592b0" />
 
+<img width="1920" height="1080" alt="hyprlock_screenshot_1765654542" src="https://github.com/user-attachments/assets/081d9946-00f5-4219-a609-5144bf1cf60e" />
 

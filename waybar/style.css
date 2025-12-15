@@ -1,191 +1,139 @@
 @import "mocha.css";
 
+/* --- Variables --- */
+@define-color bar-bg alpha(@background, 0.7);
+@define-color main-bg #24283b; /* A slightly lighter dark for the group pills */
+@define-color main-fg @foreground;
+@define-color wb-act-bg #a9b1d6;
+@define-color wb-act-fg #32344a;
+
 * {
-    font-size:15px;
-    font-family: "JetBrainsMono Nerd Font";
+    font-family: "JetBrainsMono Nerd Font", "JetBrainsMono NF";
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 0;
 }
-window#waybar{
-    all:unset;
+
+/* --- Main Window --- */
+window#waybar {
+    background: alpha(@bar-bg,0);
+    color: @main-fg;
+    border: 0px solid alpha(@color9,0.4); /* The outer border you like */
+    border-radius: 9px;
 }
-.modules-left {
-    padding:7px;
-    margin:10 0 5 10;
-    border-radius:10px;
-    background: alpha(@background,.6);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-}
-.modules-center {
-    padding:7px;
-    margin:10 0 5 0;
-    border-radius:10px;
-    background: alpha(@background,.6);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-}
-.modules-right {
-    padding:7px;
-    margin: 10 10 5 0;
-    border-radius:10px;
-    background: alpha(@background,.6);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-}
+
 tooltip {
-    background:@background;
-    color: @color7;
+    background: @background;
+    color: @foreground;
+    border-radius: 8px;
+    border: 1px solid @color9;
 }
-#custom-quote:hover, #clock:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover,#power-profiles-daemon:hover#power-profiles-daemon.performance:hover#power-profiles-daemon.balanced:hover#power-profiles-daemon.power-saver:hover
-{
-    transition: all .3s ease;
-    color:@color9;
-}
-#custom-notification {
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color:@color7;
-}
-#clock{
-    padding: 0px 5px;
-    color:@color7;
-    transition: all .3s ease;
-}
-#custom-pacman{
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color:@color7;
 
+/* --- Container Blocks (Left/Right/Center) --- */
+.modules-right, .modules-left, .modules-center {
+    background: transparent;
+    padding: 0px 4px;
 }
+
+/* --- THE GROUPS (The Pill Style) --- */
+/* This gives the background color to the groups, not the individual items */
+#group-hardware,
+#group-power,
+#group-connection,
+#pulseaudio,
+#custom-quote,
+#custom-notification,
+#tray,
+#cava,
+#clock {
+    background-color: alpha(@color8, 0.3); /* Dark pill background */
+    color: @foreground;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin: 4px 3px;
+    border: 1px solid alpha(@color9, 0.2); /* Slight border for definition */
+}
+
+/* Special styling for the active expander arrow */
+#custom-expand {
+    color: @color9;
+    font-size: 16px;
+    padding-right: 4px;
+}
+
+/* --- Modules INSIDE Groups --- */
+/* These must be transparent to show the group's pill background */
+#disk,
+#cpu,
+#memory,
+#temperature,
+#network,
+#bluetooth,
+#power-profiles-daemon,
+#battery {
+    background-color: alpha(@color8, 0.3);
+    color: @foreground;
+    border-radius: 8px;
+    padding: 2px 6px;
+    margin: 4px 3px;
+    border: 1px solid alpha(@color9, 0.2);
+}
+
+/* --- Workspaces (Restoring the style) --- */
 #workspaces {
-    padding: 0px 5px;
+    /* The container pill */
+    background-color: alpha(@color8, 0.3);
+    margin: 4px 3px;
+    padding: 2px 4px;
+    border-radius: 8px;
+    border: transparent;
 }
+
 #workspaces button {
-    all:unset;
-    padding: 0px 5px;
-    color: alpha(@color9,.4);
-    transition: all .2s ease;
+    padding: 0px 6px;
+    background-color: transparent;
+    color: #314a5c; /* Inactive color */
+    transition: all 0.3s ease;
 }
-#workspaces button:hover {
-    color:rgba(0,0,0,0);
-    border: none;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
-    transition: all 1s ease;
-}
+
 #workspaces button.active {
-    color: @color9;
-    border: none;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
-}
-#workspaces button.empty {
-    color: rgba(0,0,0,0);
-    border: none;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
-}
-#workspaces button.empty:hover {
-    color: rgba(0,0,0,0);
-    border: none;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
-    transition: all 1s ease;
-}
-#workspaces button.empty.active {
-    color: @color9;
-    border: none;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
-}
-#bluetooth{
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color:@color7;
-
-}
-#network{
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color:@color7;
-
-}
-#battery{
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color:@color7;
-}
-#battery.charging {
-    color: #26A65B;
+    color: @color7; /* Active dot color */
+    background-color: transparent; /* Soft background for active workspace */
+    min-width: 10px;
 }
 
-#battery.warning:not(.charging) {
-    color: #ffbe61;
+#workspaces button:hover {
+	color:rgba(0,0,0,0);
+	border: none;
+    text-shadow: 0px 0px 0px rgba(0, 0, 10, .5);
+    transition: all 0.4s ease;
+}
+
+#workspaces button.urgent {
+    color: @red;
+    animation-name: blink-urgent;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+/* --- Battery States --- */
+#battery.charging, #battery.plugged {
+    color: @green;
 }
 
 #battery.critical:not(.charging) {
-    color: #f53c3c;
+    background-color: @red;
+    color: @white;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-#group-expand{
-    padding: 0px 5px;
-    transition: all .3s ease; 
-}
-#custom-expand{
-    padding: 0px 5px;
-    color:alpha(@foreground,.2);
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
-    transition: all .3s ease; 
-}
-#custom-expand:hover{
-    color:rgba(255,255,255,.2);
-    text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
-}
-#custom-colorpicker{
-    padding: 0px 5px;
-}
-#cpu,#memory,#temperature{
-    padding: 0px 5px;
-    transition: all .3s ease; 
-    color:@color7;
 
+@keyframes blink {
+    to {
+        background-color: #bf616a;
+        color: #fff;
+    }
 }
-#custom-endpoint{
-    color:transparent;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
-
-}
-#pulseaudio {
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color: @color7; /* Default color for the volume indicator */
-}
-
-#pulseaudio:hover {
-    color: @color9; /* Change color on hover */
-}
-
-#pulseaudio.bluetooth {
-    color: #26A65B; /* Jungle green for Bluetooth connected state */
-}
-
-#pulseaudio.muted {
-    color: #f53c3c; /* Color for muted state (red) */
-}
-
-#pulseaudio.source-muted {
-    color: #ffbe61; /* Color for source muted state (orange) */
-}
-#custom-quote {
-    padding: 0px 5px;
-    color: @color7; /* Change this to your desired color */
-    transition: all .3s ease;
-}
-
-#power-profiles-daemon, #power-profiles-daemon.performance, #power-profiles-daemon.balanced, #power-profiles-daemon.power-saver
-{
-	padding: 0px 5px;
-    transition: all .3s ease;
-    color:@color7;
-
-}
-
-
-
-
-

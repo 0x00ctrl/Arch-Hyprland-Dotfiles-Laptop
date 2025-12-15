@@ -11,6 +11,8 @@
     │   ├── alacritty.toml
     │   └── themes/
     │       └── autumn.toml
+    ├── cava
+    |   └── config
     ├── rmpc/
     │   ├── config.ron
     │   └── themes/
@@ -19,6 +21,9 @@
     │   ├── mocha.css
     │   ├── style.css
     │   └── config
+    ├── wofi/
+    |   ├──config
+    |   └──style.css
     ├── rofi/
     │   ├── launcher.sh
     │   ├── powermenu.sh
